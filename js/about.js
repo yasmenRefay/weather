@@ -13,9 +13,8 @@ var dayName =days[d.getDay()];
 // for search 
 
 async function search(a){
-console.log(searchInput.value)
 var searchValue = searchInput.value;
-    var t= await fetch(`http://api.weatherapi.com/v1/forecast.json?key=04f2479c1f8e4a2d87190558241906&q=${a}&days=3`);
+    var t= await fetch(`https://api.weatherapi.com/v1/forecast.json?key=04f2479c1f8e4a2d87190558241906&q=${a}&days=3`);
     if(t.ok&&400!=t.status){
         let a = await t.json();
         display(a.location,a.current)
